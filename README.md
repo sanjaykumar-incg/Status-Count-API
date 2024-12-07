@@ -6,6 +6,7 @@ This project has three main parts:
   1. client.py: A script that sends random status messages (between 0 and 6) to RabbitMQ every second.
   2. receive.py: This script takes the messages from RabbitMQ and saves them to MongoDB, adding a timestamp to each one.
   3. status_count_api.py: A FastAPI server that provides an API to count how many times each status appeared within a given time range.
+  4. test_script.py: A script to test the functionality of the client, receiver, and API.
 
 ## Prerequisites
 Before running this project, make sure you have:
@@ -60,7 +61,17 @@ You can use the following API endpoint to get the count of each status in a spec
   ```
   http://localhost:8000/status_count?start_time=2024-12-07%2010%3A55%3A32&end_time=2024-12-07%2010%3A55%3A35
   ```
-### 7. Example Response
+### 7. Run the Test Script
+You can test all components of the project using test.py. This script verifies:
+- The client.py script is correctly sending messages.
+- The receive.py script is consuming and storing messages in MongoDB.
+- The status_count_api.py endpoint is returning correct data.
+- To run the tests, execute:
+  ```
+  python test_script.py
+  ```
+
+### 8. Example Response
 The API will respond with a count of each status. For example:
 ```
 {
