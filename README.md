@@ -58,13 +58,7 @@ You can use the following API endpoint to get the count of each status in a spec
 - GET /count_status?start=<start_time>&end=<end_time>: This will return the count of each status (0-6) that was received between the start and end time. Make sure the time is in this format: YYYY-MM-DD HH:MM:SS.
 - Example request:
   ```
-  http://localhost:8000/count_status?start=2024-12-07%10:55:32&end=2024-12-07%10:55:34
-  ```
-- curl example:
-  ```
-  curl -X 'GET' \
-  'http://localhost:8000/status_count?start_time=2024-12-07%2010%3A55%3A32&end_time=2024-12-07%2010%3A55%3A35' \
-  -H 'accept: application/json'
+  http://localhost:8000/status_count?start_time=2024-12-07%2010%3A55%3A32&end_time=2024-12-07%2010%3A55%3A35
   ```
 ### 7. Example Response
 The API will respond with a count of each status. For example:
